@@ -13,7 +13,7 @@ goal_0 = 32
 goal_1 = 54
 
 #wie scoorde er wanneer
-scorers = player_0+''+str(goal_0)+', '+player_1+''+str(goal_1)
+scorers = player_0+' '+str(goal_0)+', '+player_1+' '+str(goal_1)
 print(scorers)
 
 report=f'{player_0} scored in the {goal_0}nd minute\n{player_1} scored in the {goal_1}th minute'
@@ -21,17 +21,18 @@ print(report)
 
 #Part 2
 player = 'Igor Belanov'
-first_name = player [:4]
-print(first_name)
+spatie = player.find(' ')#vind de spatie in de naam
+print(spatie)
 
-last_name_len = player [5:12]
-print(last_name_len)
+first_name = player[:player.find(' ')]
+last_name_len = player[player.find(' ')+1:]
+print (first_name + ' ' + last_name_len) #print voor en achternaam
 
-name_short = player [0:1]+'. '+ player [5:12]
+name_short = first_name [0]+'. '+ last_name_len 
 print(name_short)
 
-chant = 'Igor! ' * 4
-print(chant.strip(''))
+chant = (' '+first_name + '!') * 4
+print(chant.strip(' '))
 
-good_chant = chant[12:] != 'Igor'
+good_chant = chant[-1] != ' '
 print(good_chant)
